@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 20px;
 }
 
 .App-logo {
@@ -55,19 +56,52 @@
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   padding: 16px;
-  flex-grow: 1;
-}
+  justify-content: center;
+  height: 90%;
 
+  // flex-grow: 1;
+
+ 
+}
+.content {
+  // padding: 50px;
+  // background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 90vh; 
+  
+}
+.rate-container .ant-rate {
+  display: inline-block;
+  vertical-align: middle;
+}
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column
+  //  align-items: stretch;
+}
+.course-card-count{
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #37a111;
+  color: #fff;
+  width: 100px;
+}
 .course-card h3 {
-text-align: left;
+  text-align: left;
   line-height: 1.5;
   margin-bottom: 16px;
 }
-.course-card-body{
-padding: 16px;
+.course-card-body {
+  padding: 16px;
   flex-grow: 1;
   margin-top: 40px;
 }
@@ -109,9 +143,7 @@ padding: 16px;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 24px;
-  
 }
-
 
 .pagination {
   display: flex;
@@ -125,10 +157,11 @@ padding: 16px;
   margin: 0 10px;
 }
 
-.pagination li a, .btn {
+.pagination li a,
+.btn {
   display: inline-block;
   padding: 10px;
-  width: 60px; 
+  width: 60px;
   text-align: center;
   border-radius: 5px;
   background-color: #f7f7f7;
@@ -138,9 +171,8 @@ padding: 16px;
   font-weight: bold;
 }
 
-.btn{
-  border: 1px solid  #938989;
-
+.btn {
+  border: 1px solid #938989;
 }
 
 .pagination .previous,
@@ -148,7 +180,8 @@ padding: 16px;
   display: none;
   visibility: hidden;
 }
-.pagination li.active a, .btn:hover  {
+.pagination li.active a,
+.btn:hover {
   background-color: #0077ff;
   color: #fff;
 }
