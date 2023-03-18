@@ -2,27 +2,23 @@ import logo from './logo.svg'
 import './App.scss'
 import { url, fetchData } from './helpers/index'
 import { useEffect, useState } from 'react'
-import PageDataCourses from './PageDataCourses'
+import PageDataCourses from './components/PageDataCourses'
 import { createBrowserHistory } from 'history'
 // import { Router, Route, Link, Redirect, Routes } from 'react-router-dom'
 import { fetchCourse } from './helpers/index'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Page404 from './helpers/Page404'
+import { connect } from 'react-redux'
 const history = createBrowserHistory()
 const Course = () => {
   return <> курс </>
 }
-const NotFoundPage = ({}) => (
-  <>
-    <h1> 404 </h1>
-    <h2> Oops, no such page found </h2>
-    <a> return to the main page</a>
-  </>
-)
+
 const PageCourse = ({
   match: {
     params: { _id },
   },
-  fetchCourse,
+  
 }) => {
   useEffect(() => {
     fetchCourse(_id)
@@ -30,6 +26,7 @@ const PageCourse = ({
   return (
     <div className="">
       <Course />
+      <h1> {_id} </h1>
     </div>
   )
 }
@@ -40,8 +37,8 @@ const Main = () => (
   <main>
     <Switch>
       <Route path="/" exact component={PageDataCourses} />
-      <Route path="/course/:id" component={Course} />
-      <Route component={NotFoundPage} />
+      <Route path="/course/:id" component={PageCourse} />
+      <Route component={Page404} />
     </Switch>
   </main>
 )

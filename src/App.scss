@@ -77,6 +77,22 @@
   height: 90vh; 
   
 }
+.not-found {
+  // padding: 50px;
+  // background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  height: 90vh; 
+  
+}
+.not-found h1{
+  font-size: 60px;
+  color: crimson;
+}
 .rate-container .ant-rate {
   display: inline-block;
   vertical-align: middle;
