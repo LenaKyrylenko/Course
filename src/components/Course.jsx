@@ -8,17 +8,58 @@ import Loading from '../helpers/Loading'
 import VideoPlayer from './VideoPlayer'
 
 const Course = ({ course } ) => {
- 
-//   const [currentPage, setCurrentPage] = useState(0)
-//   const cardCountPage = 10
-
-// console.log("course ", course)
     return (
-        <>
-
-
-       <VideoPlayer courseId={course?.id} url={course?.meta?.courseVideoPreview?.link}/>
-        {/* <div
+      <>
+        
+         <Row
+            gutter={[14, 14]}
+            style={{ alignItems: 'stretch' }}
+        >
+            <Col span={14} xs={24} sm={12} md={8} lg={14}>
+         <div key={course?.id}>
+          <div className="course-page-info">
+            <h2> {course?.title}</h2>
+                {console.log("id = ", course?.id)}
+               
+                  <VideoPlayer previewImageLink={course?.previewImageLink + '/cover.webp'}
+                    courseId={course?.id}
+                    id="video-player-course"
+                    url={course?.meta?.courseVideoPreview?.link} />
+               
+         <p> {course?.description}</p>
+            
+            
+          </div>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className='scrollable'>
+            
+            <h3> {course?.lessons.length} lessons </h3>
+            
+            {course?.lessons?.map((el) =>
+              
+              <div className='course-card-lessons'>
+                <h5> {el?.title}</h5>
+                {console.log('el ', el?.previewImageLink )}
+               
+                <VideoPlayer
+              previewImageLink={`${el?.previewImageLink}/lesson-${el?.order}.webp`}
+                  courseId={course?.id}
+                  lessonsId={el?.id}
+                  id={"video-player-course-" + `${el?.id}`}
+                  url={el?.link}
+                  /> 
+               </div>
+              )}
+            </div>
+          </Col>
+        </Row>
+        </>
+    )
+  }
+          {/* </div> */}
+            {/* <div
                 style={{
                     display: 'flex', alignItems: 'stretch',
                     flexWrap: 'wrap'
@@ -26,7 +67,6 @@ const Course = ({ course } ) => {
         >
           <Row
             gutter={[14, 14]}
-            align="stretch"
             style={{ alignItems: 'stretch' }}
           >
             {data.reverse().map((el) => (
@@ -37,9 +77,7 @@ const Course = ({ course } ) => {
           </Row>
         </div>
        */}
-      </>
-    )
-  }
+    
 
 
 export default Course

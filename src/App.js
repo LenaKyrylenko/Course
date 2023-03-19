@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import Course from './components/Course'
 import Error from './helpers/Error'
 import Loading from './helpers/Loading'
+import Header from './components/Header'
 const history = createBrowserHistory()
 
 const PageCourse = ({
@@ -43,7 +44,6 @@ const PageCourse = ({
       <div className="">
         {console.log('data = ', data)}
         <Course course={data} />
-        <h1> {id} </h1>
       </div>
     )
   }
@@ -64,6 +64,7 @@ function App() {
   return (
     <Router history={history}>
       <div className="App">
+        <Header/>
         <Main />
       </div>
     </Router>

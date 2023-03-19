@@ -1,6 +1,12 @@
+$shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
+0 2px 3px rgba(191, 194, 196, 0.22);
+
 .App {
-  text-align: center;
-  margin: 20px;
+  // text-align: center;
+  font-family: Verdana,Geneva,sans-serif; 
+ 
+    overflow-x: hidden;
+ 
 }
 
 .App-logo {
@@ -37,18 +43,7 @@
     transform: rotate(360deg);
   }
 }
-// .Course{
-//   border-radius: 100px;
-//   background-color: azure;
-//   padding: 0 15px;
-//     overflow: visible;
-//     position: relative;
-//     font-size: 14px;
-//     line-height: 24px;
-//     // text-align: left;
-//     z-index: 3;
-//     width: 500px;
-// }
+
 .course-card {
   display: flex;
   flex-direction: column;
@@ -56,32 +51,74 @@
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow;
   overflow: hidden;
   padding: 16px;
   justify-content: center;
   height: 90%;
-color: #282c34;
+  margin: 10px;
+  color: #282c34;
+  // width: 90%;
   // flex-grow: 1;
-
- 
 }
-.course-card:hover{
+.scrollable {
+
+  overflow: auto;
+  max-height: 80vh; 
+}
+.course-card-lessons {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   border: 1px solid #ccc;
+  flex-direction: column;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow;
   overflow: hidden;
   padding: 16px;
-  justify-content: center;
-  height: 90%;
-color: #23278f;
+
+  // justify-content: center;
+  // height: 90%;
+  color: #23272e;
+  flex-grow: 1;
+}
+.courses-page {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 20px;
+
+}
+.course-page-info {
+  // left: 0;
+  //   float: left;
+  // clear: right;
+  // flex-grow: 1;
+}
+
+.course-page p {
+  font-size: medium;
+  width: 60%;
   // flex-grow: 1;
 
- 
+}
+
+.course-card:hover {
+  cursor: pointer;
+  // display: flex;
+  // flex-direction: column;
+  // border: 1px solid #ccc;
+  // border-radius: 8px;
+  // padding: 16px;
+  // margin-bottom: 16px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  // overflow: hidden;
+  // padding: 16px;
+  // justify-content: center;
+  // height: 90%;
+  // color: #23278f;
+  // flex-grow: 1;
 }
 .content {
   // padding: 50px;
@@ -89,10 +126,9 @@ color: #23278f;
   border-radius: 4px;
 
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  height: 90vh; 
-  
+  height: 90vh;
 }
 .not-found {
   // padding: 50px;
@@ -101,12 +137,11 @@ color: #23278f;
 
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  height: 90vh; 
-  
+  height: 90vh;
 }
-.not-found h1{
+.not-found h1 {
   font-size: 60px;
   color: crimson;
 }
@@ -118,15 +153,19 @@ color: #23278f;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  flex-direction: column
+  flex-direction: column;
   //  align-items: stretch;
 }
-.course-card-count{
-  border-radius: 20px;
+.course-card-count {
+  border-radius: 2px;
   padding: 10px;
-  background-color: #37a111;
+  font-size: larger;
+  background-color: rgba(234,85,43,0.8);
   color: #fff;
+
   width: 100px;
+  text-align: center;
+  vertical-align:baseline;
 }
 .course-card h3 {
   text-align: left;
@@ -136,13 +175,15 @@ color: #23278f;
 .course-card-body {
   padding: 16px;
   flex-grow: 1;
-  margin-top: 40px;
+  // margin-top: 40px;
 }
 .course-card-image {
   flex-shrink: 0;
   height: 200px;
   background-size: cover;
   background-position: center;
+  // align-items: 'stretch';
+  margin-top: 50px;
 }
 
 .course-card h2 {
@@ -184,6 +225,7 @@ color: #23278f;
   list-style: none;
   margin: 0;
   padding: 0;
+ 
 }
 
 .pagination li {
@@ -217,4 +259,50 @@ color: #23278f;
 .btn:hover {
   background-color: #0077ff;
   color: #fff;
+}
+.header{
+position: relative;
+background-color: #f7f7f7;
+width: 100%;
+margin: 0;
+display: flex;
+padding: 10px;
+z-index: 4;
+width: 100%;
+opacity: 1;
+height: 70px;
+top: 0;
+transition: 0.3s;
+box-shadow: $shadow;
+}
+.motto{
+  color:#EA552B;
+  text-transform: uppercase;
+  font-weight:900;
+}
+.logo {
+  background-image: url(../src/logo.svg);
+  display: block;
+  width: 130px;
+  height: 35px;
+  margin: 10px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+box-shadow: none;
+
+
+}
+.courses-h1{
+text-align: center;
+justify-content: center;
+color:#00A698;
+text-shadow: $shadow;
+}
+@media screen and (max-width: 900px) {
+  .logo{
+    width: 200px;
+    height: 40px;
+  }
 }

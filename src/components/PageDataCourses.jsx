@@ -52,7 +52,7 @@ const PageDataCourses = () => {
     return (
       <>
         <div
-          style={{ display: 'flex', alignItems: 'stretch', flexWrap: 'wrap' }}
+          className='courses-page'
         >
           <Row
             gutter={[14, 14]}
@@ -60,7 +60,7 @@ const PageDataCourses = () => {
             style={{ alignItems: 'stretch' }}
           >
             {currentData.reverse().map((el) => (
-              <Col span={8} xs={24} sm={12} md={8} lg={8}>
+              <Col span={7} xs={24} sm={12} md={8} lg={8}>
                 <CardCourse course={el} />
               </Col>
             ))}
