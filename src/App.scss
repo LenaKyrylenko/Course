@@ -64,7 +64,8 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
 .scrollable {
 
   overflow: auto;
-  max-height: 80vh; 
+  max-height: 70vh; 
+  margin-top: 20px;
 }
 .course-card-lessons {
   display: flex;
@@ -95,6 +96,7 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   //   float: left;
   // clear: right;
   // flex-grow: 1;
+  margin:20px;
 }
 
 .course-page p {
@@ -225,6 +227,7 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-bottom: 10px;
  
 }
 
@@ -281,7 +284,7 @@ box-shadow: $shadow;
   font-weight:900;
 }
 .logo {
-  background-image: url(../src/logo.svg);
+  background-image: url(./materials/logo.svg);
   display: block;
   width: 130px;
   height: 35px;

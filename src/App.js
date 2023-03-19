@@ -1,15 +1,14 @@
-import logo from './logo.svg'
+
 import './App.scss'
 import { url, fetchData } from './helpers/index'
 import { useEffect, useState } from 'react'
 import PageDataCourses from './components/PageDataCourses'
 import { createBrowserHistory } from 'history'
-// import { Router, Route, Link, Redirect, Routes } from 'react-router-dom'
 import { fetchCourse } from './helpers/index'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Page404 from './helpers/Page404'
 import { connect } from 'react-redux'
-import Course from './components/Course'
+import Course from './components/CourseLessons'
 import Error from './helpers/Error'
 import Loading from './helpers/Loading'
 import Header from './components/Header'
@@ -42,14 +41,24 @@ const PageCourse = ({
   } else {
     return (
       <div className="">
-        {console.log('data = ', data)}
-        <Course course={data} />
+        {/* {console.log('data = ', data)}
+        {
+          (data?.lessons?.includes("video")
+            ? console.log('видео ') :
+            console.log('не видео')
+          )
+        } */}
+        
+        
+            <Course course={data} />
+           
+        
+      
+        
       </div>
     )
   }
 }
-
-// const CPageCourse = connect(null, { fetchCourse: fetchCourse })(PageCourse)
 
 const Main = () => (
   <main>

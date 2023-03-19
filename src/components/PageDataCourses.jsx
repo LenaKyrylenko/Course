@@ -60,7 +60,15 @@ const PageDataCourses = () => {
             style={{ alignItems: 'stretch' }}
           >
             {currentData.reverse().map((el) => (
-              <Col span={7} xs={24} sm={12} md={8} lg={8}>
+              <Col
+                
+                span={7} xs={24} sm={12}
+                 lg={8}
+                // lg={{offset:1, span:6}}
+                md={{ offset: 0, span: 9}}
+                // sm={{ offset: 3, span: 18 }}
+
+              >
                 <CardCourse course={el} />
               </Col>
             ))}

@@ -4,7 +4,6 @@ import Hls from 'hls.js';
 const VideoPlayer = ({ url, courseId, previewImageLink, id, lessonsId = 0 }) => {
   const [video, setVideo] = useState(null);
   const key = `${courseId}-${lessonsId}`
-  console.log('key ', key)
   useEffect(() => {
     const videoEl = document.getElementById(id);
     setVideo(videoEl);
@@ -50,7 +49,7 @@ const VideoPlayer = ({ url, courseId, previewImageLink, id, lessonsId = 0 }) => 
   };
   return (
     <video id={id}
-      poster={previewImageLink} width="50%"
+      poster={previewImageLink} width="90%"
       muted onTimeUpdate={handleVideoTimeUpdate} controls />
   );
 };

@@ -14,7 +14,6 @@ async function fetchData() {
 }
 
 export async function fetchCourse(id) {
-  console.log(url + '/' + id)
   return await fetch(url + '/' + id, {
     method: 'GET',
     headers: {
@@ -24,7 +23,6 @@ export async function fetchCourse(id) {
     },
   })
     .then((res) => res.json())
-    // .then((data) => console.log(data))
+   
 }
 export default fetchData
-// {{host}}/{{version}}/core/preview-courses/:courseId
