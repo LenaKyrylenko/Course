@@ -1,20 +1,14 @@
-import { useEffect, useState } from 'react'
-import CardCourse from './CardCourse'
-import { fetchCourse } from '../helpers'
 import { Row, Col, Space, Spin } from 'antd'
-import Pagination from './Pagination'
-import Error from '../helpers/Error'
-import Loading from '../helpers/Loading'
 import VideoPlayer from './VideoPlayer'
 import blocked_video from '../materials/default-locked-video.jpg'
 import DefaultInfoCourse from './DefaultInfoCourse'
 const Course = ({ course }) => {
-  console.log('data ' , course)
+  console.log('data ', course)
   return (
     <>
       <Row gutter={[14, 14]} style={{ alignItems: 'stretch' }}>
         <Col
-          span={14}
+          span={12}
           xs={{ offset: 2, span: 20 }}
           sm={{ offset: 1, span: 20 }}
           md={{ offset: 4, span: 20 }}
@@ -30,16 +24,19 @@ const Course = ({ course }) => {
                 id="video-player-course"
                 url={course?.meta?.courseVideoPreview?.link}
               />
-      <DefaultInfoCourse course={course} />
+              <DefaultInfoCourse course={course} />
             </div>
           </div>
         </Col>
         <Col lg={{ offset: 1, span: 9 }} md={{ offset: 3, span: 16 }}>
-          <h2 className="course-card-count"> {course?.lessons.length} lessons </h2>
+          <h2 className="course-card-count">
+            {' '}
+            {course?.lessons.length} lessons{' '}
+          </h2>
           <div className="scrollable">
             {course?.lessons?.map((el) => (
               <div className="course-card-lessons">
-                <h3> {el?.title}</h3>
+                <h3> {el.order}) {el?.title}</h3>
 
                 {el?.type == 'video' ? (
                   <VideoPlayer
@@ -52,7 +49,7 @@ const Course = ({ course }) => {
                 ) : (
                   <>
                     <p>This video is locked</p>
-                    <img src={blocked_video} height={'50%'} width={'50%'} />
+                    <img src={blocked_video} height={'40%'} width={'70%'} />
                   </>
                 )}
               </div>

@@ -1,5 +1,4 @@
-import { CloseCircleOutlined } from '@ant-design/icons'
-import { Button, Result, Typography } from 'antd'
+import { Result, Typography } from 'antd'
 const { Paragraph, Text } = Typography
 const Error = ({ error }) => {
   console.log('error ', error.stack)

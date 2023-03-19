@@ -1,12 +1,10 @@
-$shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
-0 2px 3px rgba(191, 194, 196, 0.22);
+$shadow: 0px 2px 3px rgba(73, 80, 83, 0.25), 0 2px 3px rgba(191, 194, 196, 0.22);
 
 .App {
-  // text-align: center;
-  font-family: Verdana,Geneva,sans-serif; 
- 
-    overflow-x: hidden;
- 
+  text-align: center;
+  font-family: Verdana, Geneva, sans-serif;
+
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -58,18 +56,17 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   height: 90%;
   margin: 10px;
   color: #282c34;
-  // width: 90%;
-  // flex-grow: 1;
+  width: 90%;
+  flex-grow: 1;
 }
 .scrollable {
-
   overflow: auto;
-  max-height: 70vh; 
+  max-height: 70vh;
   margin-top: 20px;
 }
 .course-card-lessons {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   border: 1px solid #ccc;
   flex-direction: column;
   border-radius: 8px;
@@ -79,8 +76,8 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   overflow: hidden;
   padding: 16px;
 
-  // justify-content: center;
-  // height: 90%;
+  justify-content: center;
+  height: 90%;
   color: #23272e;
   flex-grow: 1;
 }
@@ -89,42 +86,30 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   align-items: stretch;
   flex-wrap: wrap;
   margin: 20px;
-
 }
 .course-page-info {
-  // left: 0;
-  //   float: left;
-  // clear: right;
-  // flex-grow: 1;
-  margin:20px;
+  left: 0;
+  float: left;
+  clear: right;
+  flex-grow: 1;
+  margin: 20px;
 }
 
 .course-page p {
   font-size: medium;
   width: 60%;
-  // flex-grow: 1;
-
+  flex-grow: 1;
 }
 
 .course-card:hover {
   cursor: pointer;
-  // display: flex;
-  // flex-direction: column;
-  // border: 1px solid #ccc;
-  // border-radius: 8px;
-  // padding: 16px;
-  // margin-bottom: 16px;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  // overflow: hidden;
-  // padding: 16px;
-  // justify-content: center;
-  // height: 90%;
-  // color: #23278f;
-  // flex-grow: 1;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 250, 0.7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 .content {
-  // padding: 50px;
-  // background: rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 
   display: flex;
@@ -133,8 +118,8 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   height: 90vh;
 }
 .not-found {
-  // padding: 50px;
-  // background: rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 
   display: flex;
@@ -156,18 +141,18 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
-  //  align-items: stretch;
+  align-items: stretch;
 }
 .course-card-count {
   border-radius: 2px;
   padding: 10px;
   font-size: larger;
-  background-color: rgba(234,85,43,0.8);
+  background-color: rgba(234, 85, 43, 0.8);
   color: #fff;
 
   width: 100px;
   text-align: center;
-  vertical-align:baseline;
+  vertical-align: baseline;
 }
 .course-card h3 {
   text-align: left;
@@ -177,14 +162,14 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
 .course-card-body {
   padding: 16px;
   flex-grow: 1;
-  // margin-top: 40px;
+  margin-top: 40px;
 }
 .course-card-image {
   flex-shrink: 0;
   height: 200px;
   background-size: cover;
   background-position: center;
-  // align-items: 'stretch';
+  align-items: 'stretch';
   margin-top: 50px;
 }
 
@@ -228,7 +213,6 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   margin: 0;
   padding: 0;
   margin-bottom: 10px;
- 
 }
 
 .pagination li {
@@ -263,25 +247,25 @@ $shadow: 0 2px 3px rgba(73, 80, 83, 0.25),
   background-color: #0077ff;
   color: #fff;
 }
-.header{
-position: relative;
-background-color: #f7f7f7;
-width: 100%;
-margin: 0;
-display: flex;
-padding: 10px;
-z-index: 4;
-width: 100%;
-opacity: 1;
-height: 70px;
-top: 0;
-transition: 0.3s;
-box-shadow: $shadow;
+.header {
+  position: relative;
+  background-color: #f7f7f7;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  padding: 10px;
+  z-index: 4;
+  width: 100%;
+  opacity: 1;
+  height: 70px;
+  top: 0;
+  transition: 0.3s;
+  box-shadow: $shadow;
 }
-.motto{
-  color:#EA552B;
+.motto {
+  color: #ea552b;
   text-transform: uppercase;
-  font-weight:900;
+  font-weight: 900;
 }
 .logo {
   background-image: url(./materials/logo.svg);
@@ -293,18 +277,16 @@ box-shadow: $shadow;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-box-shadow: none;
-
-
+  box-shadow: none;
 }
-.courses-h1{
-text-align: center;
-justify-content: center;
-color:#00A698;
-text-shadow: $shadow;
+.courses-h1 {
+  text-align: center;
+  justify-content: center;
+  color: #00a698;
+  text-shadow: $shadow;
 }
 @media screen and (max-width: 900px) {
-  .logo{
+  .logo {
     width: 200px;
     height: 40px;
   }

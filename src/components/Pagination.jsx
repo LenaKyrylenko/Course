@@ -2,7 +2,7 @@ import ReactPaginate from 'react-paginate'
 
 const Pagination = ({ handlePrevPage, currentPage, cards, cardCountPage, handlePageChange, handleNextPage, }) => {
     return(  <div className="pagination">
-    <button className="btn" onClick={handlePrevPage}>
+    <button className="pagination btn" onClick={handlePrevPage}>
       {' '}
       {'<'}
     </button>
@@ -20,7 +20,7 @@ const Pagination = ({ handlePrevPage, currentPage, cards, cardCountPage, handleP
       forcePage={currentPage}
     />
 
-    <button className="btn" onClick={handleNextPage}>
+    <button className="pagination btn" onClick={handleNextPage}>
       {'>'}
     </button>
   </div>)

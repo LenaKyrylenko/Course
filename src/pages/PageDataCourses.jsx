@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import CardCourse from './CardCourse'
-import fetchData from '../helpers'
+import CardCourse from '../components/CardCourse'
+import { fetchData } from '../helpers'
 import { Row, Col, Space, Spin } from 'antd'
-import Pagination from './Pagination'
+import Pagination from '../components/Pagination'
 import Error from '../helpers/Error'
 import Loading from '../helpers/Loading'
 const PageDataCourses = () => {
@@ -43,7 +43,7 @@ const PageDataCourses = () => {
   const indexOfLastData = (currentPage + 1) * cardCountPage
   const indexOfFirstData = indexOfLastData - cardCountPage
   const currentData = cards.courses?.slice(indexOfFirstData, indexOfLastData)
-  console.log('cards ', cards)
+  // console.log('cards ', cards)
   if (error) {
     return <Error error={error} />
   } else if (!isLoaded) {
@@ -64,9 +64,9 @@ const PageDataCourses = () => {
                 
                 span={7} xs={24} sm={12}
                  lg={8}
-                // lg={{offset:1, span:6}}
+               
                 md={{ offset: 0, span: 9}}
-                // sm={{ offset: 3, span: 18 }}
+               
 
               >
                 <CardCourse course={el} />
