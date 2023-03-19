@@ -13,16 +13,18 @@ async function fetchData() {
   }).then((res) => res.json())
 }
 
-
 export async function fetchCourse(id) {
-  console.log((url + "/" + id))
-  return await fetch((url + "/" + id), {
+  console.log(url + '/' + id)
+  return await fetch(url + '/' + id, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*",
       Authorization: `Bearer  ${token}`,
-    }
-  }).then((res) => res.json()).then((data)=>console.log(data))
+    },
+  })
+    .then((res) => res.json())
+    // .then((data) => console.log(data))
 }
 export default fetchData
 // {{host}}/{{version}}/core/preview-courses/:courseId

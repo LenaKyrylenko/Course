@@ -16,7 +16,8 @@ const CardCourse = ({ course }) => {
     <>
       <Link
         to={`/course/` + course?.id}
-        onClick={() => fetchCourse(course?.id)}
+        // onClick={() => fetchCourse(course?.id)
+        // }
       >
         <div key={course?.id} className="course-card">
           <div className="course-card-body">
@@ -37,7 +38,7 @@ const CardCourse = ({ course }) => {
             <h3> Duration: {formattedDuration} </h3>
 
             <p className="course-card-status"> {course?.status}</p>
-            <h3> Start date : {course?.formattedDate}</h3>
+            <h3> Start date : {formattedDate}</h3>
             {/* <h3>lessonsCount {lessonsCount}</h3> */}
             <p className="course-card-count">
               {' '}

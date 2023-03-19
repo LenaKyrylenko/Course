@@ -9,26 +9,44 @@ import { fetchCourse } from './helpers/index'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Page404 from './helpers/Page404'
 import { connect } from 'react-redux'
+import Course from './components/Course'
+import Error from './helpers/Error'
+import Loading from './helpers/Loading'
 const history = createBrowserHistory()
-const Course = () => {
-  return <> курс </>
-}
 
 const PageCourse = ({
   match: {
-    params: { _id },
+    params: { id },
   },
   
 }) => {
+  const [data, setData] = useState([])
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
   useEffect(() => {
-    fetchCourse(_id)
-  }, [_id])
-  return (
-    <div className="">
-      <Course />
-      <h1> {_id} </h1>
-    </div>
-  )
+    fetchCourse(id).then(
+      (result) => {
+        setIsLoaded(true)
+        setData(result)
+      },
+      (error) => {
+        setIsLoaded(true)
+        setError(error)
+      },)
+  }, [id])
+  if (error) {
+    return <Error error={error} />
+  } else if (!isLoaded) {
+    return <Loading />
+  } else {
+    return (
+      <div className="">
+        {console.log('data = ', data)}
+        <Course course={data} />
+        <h1> {id} </h1>
+      </div>
+    )
+  }
 }
 
 // const CPageCourse = connect(null, { fetchCourse: fetchCourse })(PageCourse)

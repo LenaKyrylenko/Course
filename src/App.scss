@@ -61,7 +61,24 @@
   padding: 16px;
   justify-content: center;
   height: 90%;
+color: #282c34;
+  // flex-grow: 1;
 
+ 
+}
+.course-card:hover{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 16px;
+  justify-content: center;
+  height: 90%;
+color: #23278f;
   // flex-grow: 1;
 
  

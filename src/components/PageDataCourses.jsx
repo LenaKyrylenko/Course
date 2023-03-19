@@ -56,7 +56,7 @@ const PageDataCourses = () => {
         >
           <Row
             gutter={[14, 14]}
-            align="stretch"
+          
             style={{ alignItems: 'stretch' }}
           >
             {currentData.reverse().map((el) => (
